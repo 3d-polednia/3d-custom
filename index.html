@@ -180,6 +180,27 @@ body { font-family:'Inter',sans-serif; background:var(--navy); color:var(--white
 @keyframes floatUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
 @keyframes fadeIn { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
 </style>
+<style>
+/* ===== GALERIA PORTFOLIO ===== */
+.gallery-section{max-width:1080px;margin:0 auto;padding:2.5rem 0;}
+.g-head{text-align:center;margin-bottom:2.6rem;}
+.g-eyebrow{display:inline-block;font-family:'Exo 2',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-light);margin-bottom:.8rem;padding:.35rem 1rem;border:1px solid rgba(245,158,11,.3);border-radius:50px;background:rgba(245,158,11,.06);}
+.g-title{font-family:'Exo 2',sans-serif;font-weight:900;font-size:clamp(1.7rem,5.5vw,2.6rem);line-height:1.08;letter-spacing:-.02em;background:linear-gradient(135deg,#fff 0%,var(--teal-light) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.g-sub{color:var(--gray);font-size:.95rem;margin-top:.7rem;max-width:520px;margin-inline:auto;line-height:1.6;}
+.g-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem;perspective:1400px;}
+@media(min-width:760px){.g-grid{gap:1.4rem;}}
+.g-card{border:none;padding:0;background:none;cursor:pointer;border-radius:20px;overflow:hidden;position:relative;opacity:0;transform:translateY(26px);animation:gIn .65s var(--d) cubic-bezier(.2,.7,.3,1) forwards;transform-style:preserve-3d;}
+@keyframes gIn{to{opacity:1;transform:translateY(0);}}
+.g-card-inner{position:relative;border-radius:20px;overflow:hidden;border:1px solid rgba(94,234,212,.14);background:rgba(255,255,255,.03);box-shadow:0 10px 30px rgba(0,0,0,.35);transition:transform .45s cubic-bezier(.2,.7,.3,1),box-shadow .45s,border-color .45s;transform-style:preserve-3d;}
+.g-card img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.3,1);}
+@media(hover:hover){.g-card:hover .g-card-inner{transform:rotateX(4deg) rotateY(-4deg) translateZ(18px);box-shadow:0 26px 55px rgba(0,0,0,.5),0 0 0 1px rgba(94,234,212,.3);border-color:rgba(94,234,212,.35);}.g-card:hover img{transform:scale(1.07);}}
+.g-shine{position:absolute;inset:0;pointer-events:none;border-radius:20px;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.18) 48%,transparent 60%);transform:translateX(-120%);transition:transform .8s;}
+@media(hover:hover){.g-card:hover .g-shine{transform:translateX(120%);}}
+.g-tag{position:absolute;top:.85rem;left:.85rem;z-index:2;font-family:'Exo 2',sans-serif;font-weight:700;font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;color:var(--navy);background:linear-gradient(135deg,var(--teal-light),var(--teal));padding:.32rem .7rem;border-radius:50px;box-shadow:0 4px 12px rgba(13,148,136,.4);}
+.g-overlay{position:absolute;inset:0;z-index:2;display:flex;align-items:flex-end;justify-content:space-between;gap:.8rem;padding:1rem 1.1rem;background:linear-gradient(to top,rgba(10,22,40,.92) 0%,rgba(10,22,40,.4) 45%,transparent 75%);opacity:0;transform:translateY(8px);transition:opacity .4s,transform .4s;}
+@media(hover:hover){.g-card:hover .g-overlay{opacity:1;transform:translateY(0);}}
+@media(hover:none){.g-overlay{opacity:1;}}
+.g-overlay-text strong{display:block;font-family:'Exo 2',sans-serif;font-weight:800;font-size:1rem;color:#fff;}
 </head>
 <body>
 
