@@ -303,7 +303,7 @@
           <h1 id="greeting-title">Wesołych, pełnych radości Świąt!</h1>
           <svg class="star" viewBox="0 0 32 32" aria-hidden="true"><path fill="#ffe1a2" d="m16 0 2.9 12.9L32 16l-13.1 3.1L16 32l-3.1-12.9L0 16l12.9-3.1Z"/></svg>
           <div class="wishes">
-            <p>Niech Wasze Święta będą pełne <strong>śmiechu, rodzinnego ciepła i chwil, do których chce się wracać.</strong> Niech pod choinką znajdzie się wszystko, co najważniejsze — zdrowie, spokój i dobra energia. A Nowy Rok niech przyniesie wiele udanych współprac, świetnych pomysłów i powodów do świętowania!</p>
+            <p>Niech Wasze Święta będą pełne <strong>śmiechu, rodzinnego ciepła i chwil, do których chce się wracać.</strong> Niech pod choinką znajdzie się to, co najważniejsze: zdrowie, spokój i dobra energia. A Nowy Rok niech przyniesie wiele udanych współprac, świetnych pomysłów i powodów do świętowania!</p>
           </div>
           <p class="signature">Wesołych Świąt życzy Zespół Agra!</p>
 
@@ -330,7 +330,7 @@
         const button = document.querySelector('#voice-control');
         const label = document.querySelector('#voice-label');
         const status = document.querySelector('#voice-status');
-        const message = 'Drodzy Kontrahenci! Niech Wasze Święta będą pełne śmiechu, rodzinnego ciepła i chwil, do których chce się wracać. Niech pod choinką znajdzie się wszystko, co najważniejsze: zdrowie, spokój i dobra energia. A Nowy Rok niech przyniesie wiele udanych współprac, świetnych pomysłów i powodów do świętowania! Wesołych Świąt życzy Zespół Agra!';
+        const message = 'Drodzy Kontrahenci! Niech Wasze Święta będą pełne śmiechu, rodzinnego ciepła i chwil, do których chce się wracać. Niech pod choinką znajdzie się to, co najważniejsze: zdrowie, spokój i dobra energia. A Nowy Rok niech przyniesie wiele udanych współprac, świetnych pomysłów i powodów do świętowania! Wesołych Świąt życzy Zespół Agra!';
 
         if (!('speechSynthesis' in window)) {
           button.hidden = true;
@@ -352,11 +352,14 @@
           }
 
           const utterance = new SpeechSynthesisUtterance(message);
-          const polishVoice = window.speechSynthesis.getVoices().find((voice) => voice.lang.toLowerCase().startsWith('pl'));
+          const voices = window.speechSynthesis.getVoices();
+          const maleVoiceHints = /adam|andrzej|bartek|bartłomiej|damian|jan|jerzy|krzysztof|maciej|marek|michał|paw[eł]l|piotr|tomasz/i;
+          const malePolishVoice = voices.find((voice) => voice.lang.toLowerCase().startsWith('pl') && maleVoiceHints.test(voice.name));
+          const polishVoice = malePolishVoice || voices.find((voice) => voice.lang.toLowerCase().startsWith('pl'));
           if (polishVoice) utterance.voice = polishVoice;
           utterance.lang = 'pl-PL';
-          utterance.rate = 1.08;
-          utterance.pitch = 1.12;
+          utterance.rate = .9;
+          utterance.pitch = 1;
           utterance.onstart = () => {
             button.setAttribute('aria-pressed', 'true');
             label.textContent = 'Zatrzymaj życzenia';
