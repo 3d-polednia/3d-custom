@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#073846">
+    <meta name="description" content="Świąteczne życzenia od hurtowni spożywczej Agra w Opolu.">
+    <meta property="og:title" content="Świąteczne życzenia od Agra">
+    <meta property="og:description" content="Ciepłych, spokojnych i pełnych radości Świąt Bożego Narodzenia.">
+    <title>Świąteczne życzenia | Agra</title>
+    <style>
+      :root {
+        --midnight: #073846;
+        --deep: #042832;
+        --pine: #0b544f;
+        --spruce: #0f6d5c;
+        --mist: #eef6ef;
+        --cream: #fffaf0;
+        --gold: #e9bd68;
+        --gold-light: #ffe1a2;
+        --red: #b94a43;
+        --ink: #173e42;
+      }
+
+      * { box-sizing: border-box; }
+
+      html { min-height: 100%; background: var(--deep); }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        overflow-x: hidden;
+        color: var(--cream);
+        font-family: Georgia, "Times New Roman", serif;
+        background:
+          radial-gradient(circle at 12% 8%, rgba(99, 164, 139, .24), transparent 25rem),
+          radial-gradient(circle at 84% 12%, rgba(233, 189, 104, .16), transparent 21rem),
+          linear-gradient(160deg, var(--midnight) 0%, var(--deep) 76%);
+      }
+
+      body::before {
+        position: fixed;
+        z-index: 0;
+        inset: 0;
+        pointer-events: none;
+        content: "";
+        opacity: .5;
+        background-image:
+          radial-gradient(circle at 12% 20%, #fff 0 1px, transparent 1.7px),
+          radial-gradient(circle at 75% 13%, #fff 0 1px, transparent 1.7px),
+          radial-gradient(circle at 47% 8%, #fff 0 1.2px, transparent 1.8px),
+          radial-gradient(circle at 93% 47%, #fff 0 .8px, transparent 1.5px),
+          radial-gradient(circle at 25% 63%, #fff 0 1px, transparent 1.7px),
+          radial-gradient(circle at 62% 83%, #fff 0 .8px, transparent 1.5px);
+        background-size: 180px 180px, 230px 230px, 270px 270px, 320px 320px, 210px 210px, 260px 260px;
+      }
+
+      a { color: inherit; }
+
+      .page {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        min-height: 100vh;
+        grid-template-rows: auto 1fr auto;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: min(1120px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 24px 0 12px;
+      }
+
+      .logo-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 76px;
+        height: 76px;
+        overflow: hidden;
+        border: 1px solid rgba(255,255,255,.7);
+        border-radius: 50%;
+        background: #fff;
+        box-shadow: 0 8px 30px rgba(0,0,0,.18);
+        transition: transform .22s ease, box-shadow .22s ease;
+      }
+
+      .logo-link:hover { transform: translateY(-2px) rotate(-3deg); box-shadow: 0 12px 34px rgba(0,0,0,.27); }
+      .logo-link:focus-visible, .voice-control:focus-visible, .maker-link:focus-visible { outline: 3px solid var(--gold-light); outline-offset: 4px; }
+
+      .logo-link img { display: block; width: 100%; height: 100%; object-fit: contain; }
+
+      .topline {
+        margin: 0;
+        color: rgba(255,250,240,.85);
+        font-family: Arial, sans-serif;
+        font-size: .72rem;
+        font-weight: 700;
+        letter-spacing: .14em;
+        text-align: right;
+        text-transform: uppercase;
+      }
+
+      main {
+        display: grid;
+        place-items: center;
+        width: min(1120px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 30px 0 52px;
+      }
+
+      .greeting-card {
+        position: relative;
+        width: min(100%, 800px);
+        overflow: hidden;
+        padding: clamp(42px, 7vw, 78px) clamp(28px, 7vw, 80px) clamp(38px, 6vw, 62px);
+        text-align: center;
+        border: 1px solid rgba(255, 240, 205, .38);
+        border-radius: 5px;
+        background:
+          linear-gradient(145deg, rgba(255,255,255,.13), transparent 31%),
+          rgba(7, 56, 70, .64);
+        box-shadow: 0 28px 65px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,255,255,.18);
+        backdrop-filter: blur(7px);
+      }
+
+      .greeting-card::before,
+      .greeting-card::after {
+        position: absolute;
+        width: 160px;
+        height: 160px;
+        content: "";
+        opacity: .92;
+        background:
+          linear-gradient(35deg, transparent 47%, rgba(233,189,104,.68) 48% 50%, transparent 51%),
+          linear-gradient(-35deg, transparent 47%, rgba(233,189,104,.68) 48% 50%, transparent 51%),
+          radial-gradient(ellipse at 50% 100%, #0e6d5d 0 37%, transparent 38%);
+      }
+
+      .greeting-card::before { top: -50px; left: -48px; transform: rotate(-20deg); }
+      .greeting-card::after { right: -48px; bottom: -58px; transform: rotate(148deg); }
+
+      .eyebrow {
+        position: relative;
+        margin: 0 0 18px;
+        color: var(--gold-light);
+        font-family: Arial, sans-serif;
+        font-size: .74rem;
+        font-weight: 700;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        position: relative;
+        max-width: 660px;
+        margin: 0 auto;
+        color: var(--cream);
+        font-size: clamp(2.45rem, 6vw, 4.75rem);
+        font-weight: 400;
+        letter-spacing: -.045em;
+        line-height: .99;
+        text-wrap: balance;
+      }
+
+      .star {
+        display: block;
+        width: 28px;
+        height: 28px;
+        margin: 26px auto 20px;
+        filter: drop-shadow(0 0 11px rgba(255, 225, 162, .58));
+      }
+
+      .wishes {
+        position: relative;
+        max-width: 600px;
+        margin: 0 auto;
+        color: rgba(255,250,240,.9);
+        font-size: clamp(1.05rem, 2vw, 1.28rem);
+        line-height: 1.56;
+      }
+
+      .wishes p { margin: 0; }
+      .wishes strong { color: var(--gold-light); font-weight: 400; }
+
+      .signature {
+        position: relative;
+        margin: 26px 0 0;
+        color: var(--gold-light);
+        font-size: 1.05rem;
+        font-style: italic;
+      }
+
+      .voice-control {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 11px;
+        min-height: 52px;
+        margin-top: 34px;
+        padding: 12px 22px;
+        cursor: pointer;
+        color: var(--deep);
+        border: 0;
+        border-radius: 99px;
+        background: var(--gold-light);
+        box-shadow: 0 8px 0 #be8a3b, 0 12px 25px rgba(0,0,0,.2);
+        font-family: Arial, sans-serif;
+        font-size: .92rem;
+        font-weight: 800;
+        transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+      }
+
+      .voice-control:hover { transform: translateY(-2px); box-shadow: 0 10px 0 #be8a3b, 0 15px 28px rgba(0,0,0,.24); }
+      .voice-control:active { transform: translateY(4px); box-shadow: 0 4px 0 #be8a3b, 0 7px 16px rgba(0,0,0,.2); }
+      .voice-control[aria-pressed="true"] { color: var(--cream); background: var(--red); box-shadow: 0 8px 0 #82342f, 0 12px 25px rgba(0,0,0,.2); }
+      .voice-icon { width: 19px; height: 19px; fill: currentColor; }
+
+      .voice-status {
+        position: relative;
+        min-height: 1.3em;
+        margin: 17px 0 0;
+        color: rgba(255,250,240,.72);
+        font-family: Arial, sans-serif;
+        font-size: .75rem;
+      }
+
+      .landscape {
+        position: absolute;
+        z-index: -1;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 125px;
+        overflow: hidden;
+        pointer-events: none;
+      }
+
+      .hill { position: absolute; bottom: -72px; border-radius: 50% 50% 0 0; background: #052f39; }
+      .hill.one { right: -6%; width: 68%; height: 150px; opacity: .94; }
+      .hill.two { left: -9%; width: 65%; height: 126px; background: #0a4649; }
+
+      .tree { position: absolute; bottom: 19px; width: 0; height: 0; border-right: 26px solid transparent; border-bottom: 0; border-left: 26px solid transparent; border-top: 74px solid #0a514d; filter: drop-shadow(0 4px 0 rgba(0,0,0,.15)); }
+      .tree::after { position: absolute; bottom: 66px; left: -3px; width: 6px; height: 15px; content: ""; background: #9b693c; }
+      .tree.a { left: 8%; transform: scale(.72); }
+      .tree.b { left: 20%; transform: scale(1.05); }
+      .tree.c { right: 17%; transform: scale(.58); }
+      .tree.d { right: 5%; transform: scale(.88); }
+
+      footer {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        width: min(1120px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 20px 0 26px;
+        color: rgba(255,250,240,.66);
+        font-family: Arial, sans-serif;
+        font-size: .72rem;
+        text-align: center;
+      }
+
+      .maker-link {
+        color: var(--gold-light);
+        font-weight: 700;
+        text-decoration-color: rgba(255,225,162,.5);
+        text-underline-offset: 3px;
+      }
+
+      @media (max-width: 520px) {
+        header { width: min(100% - 28px, 1120px); padding-top: 16px; }
+        main { width: min(100% - 28px, 1120px); padding-top: 20px; padding-bottom: 30px; }
+        .logo-link { width: 63px; height: 63px; }
+        .topline { max-width: 178px; font-size: .62rem; line-height: 1.45; }
+        .greeting-card { padding-right: 25px; padding-left: 25px; }
+        .greeting-card::before { transform: scale(.76) rotate(-20deg); transform-origin: top left; }
+        .greeting-card::after { transform: scale(.76) rotate(148deg); transform-origin: bottom right; }
+        .landscape { height: 90px; }
+        footer { width: min(100% - 28px, 1120px); padding-bottom: 18px; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <a class="logo-link" href="https://agra.opole.pl/" target="_blank" rel="noopener noreferrer" aria-label="Otwórz stronę Agra">
+          <img src="https://agra.opole.pl/wp-content/uploads/2026/01/cropped-Agra-logo-z-obwodka-bez-tla-na-zewnatrz-okregu2.png" alt="Agra – hurtownia spożywcza">
+        </a>
+        <p class="topline">Świąteczne życzenia<br>od zespołu Agra</p>
+      </header>
+
+      <main>
+        <section class="greeting-card" aria-labelledby="greeting-title">
+          <p class="eyebrow">Dla naszych Kontrahentów i ich Rodzin</p>
+          <h1 id="greeting-title">Niech magia Świąt zostanie z&nbsp;Państwem na dłużej</h1>
+          <svg class="star" viewBox="0 0 32 32" aria-hidden="true"><path fill="#ffe1a2" d="m16 0 2.9 12.9L32 16l-13.1 3.1L16 32l-3.1-12.9L0 16l12.9-3.1Z"/></svg>
+          <div class="wishes">
+            <p>Niech Święta Bożego Narodzenia będą czasem <strong>spokoju, ciepła i prawdziwej bliskości.</strong> Niech przyniosą odpoczynek wśród najbliższych, a nadchodzący rok — zdrowie, pomyślność i wiele powodów do satysfakcji.</p>
+          </div>
+          <p class="signature">Z serdecznymi życzeniami — Zespół Agra</p>
+
+          <button class="voice-control" id="voice-control" type="button" aria-pressed="false" aria-describedby="voice-status">
+            <svg class="voice-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 4V5L7 9H3Zm12.5 3a3.5 3.5 0 0 0-2-3.15v6.3a3.5 3.5 0 0 0 2-3.15ZM13.5 3.4v2.08a7 7 0 0 1 0 13.04v2.08a9 9 0 0 0 0-17.2Z"/></svg>
+            <span id="voice-label">Posłuchaj życzeń</span>
+          </button>
+          <p class="voice-status" id="voice-status" aria-live="polite">Dotknij przycisku, aby odtworzyć życzenia.</p>
+
+          <div class="landscape" aria-hidden="true">
+            <div class="hill one"></div><div class="hill two"></div>
+            <div class="tree a"></div><div class="tree b"></div><div class="tree c"></div><div class="tree d"></div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <span>Realizacja: <a class="maker-link" href="https://3d-polednia.github.io/3d-custom/#home" target="_blank" rel="noopener noreferrer">3D Połędnia</a></span>
+      </footer>
+    </div>
+
+    <script>
+      (() => {
+        const button = document.querySelector('#voice-control');
+        const label = document.querySelector('#voice-label');
+        const status = document.querySelector('#voice-status');
+        const message = 'Drodzy Kontrahenci, niech Święta Bożego Narodzenia będą czasem spokoju, ciepła i prawdziwej bliskości. Niech przyniosą odpoczynek wśród najbliższych, a nadchodzący rok zdrowie, pomyślność i wiele powodów do satysfakcji. Z serdecznymi życzeniami, Zespół Agra.';
+
+        if (!('speechSynthesis' in window)) {
+          button.hidden = true;
+          status.textContent = 'Twoja przeglądarka nie obsługuje odtwarzania głosowego.';
+          return;
+        }
+
+        const stop = () => {
+          window.speechSynthesis.cancel();
+          button.setAttribute('aria-pressed', 'false');
+          label.textContent = 'Posłuchaj życzeń';
+          status.textContent = 'Odtwarzanie zatrzymane.';
+        };
+
+        button.addEventListener('click', () => {
+          if (window.speechSynthesis.speaking) {
+            stop();
+            return;
+          }
+
+          const utterance = new SpeechSynthesisUtterance(message);
+          const polishVoice = window.speechSynthesis.getVoices().find((voice) => voice.lang.toLowerCase().startsWith('pl'));
+          if (polishVoice) utterance.voice = polishVoice;
+          utterance.lang = 'pl-PL';
+          utterance.rate = .9;
+          utterance.pitch = 1;
+          utterance.onstart = () => {
+            button.setAttribute('aria-pressed', 'true');
+            label.textContent = 'Zatrzymaj życzenia';
+            status.textContent = 'Trwa odtwarzanie życzeń.';
+          };
+          utterance.onend = () => {
+            button.setAttribute('aria-pressed', 'false');
+            label.textContent = 'Posłuchaj ponownie';
+            status.textContent = 'Dziękujemy za wspólny rok.';
+          };
+          utterance.onerror = () => {
+            button.setAttribute('aria-pressed', 'false');
+            label.textContent = 'Posłuchaj życzeń';
+            status.textContent = 'Nie udało się uruchomić lektora. Spróbuj ponownie.';
+          };
+          window.speechSynthesis.cancel();
+          window.speechSynthesis.speak(utterance);
+        });
+
+        window.addEventListener('pagehide', () => window.speechSynthesis.cancel());
+      })();
+    </script>
+  </body>
+</html>
+
