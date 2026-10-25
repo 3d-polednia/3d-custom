@@ -25,9 +25,11 @@
       .artwork { display: block; width: 100%; height: auto; overflow: hidden; pointer-events: none; }
       .paper {
         position: relative; isolation: isolate; padding: 0 11% 12px;
-        text-align: center;
+        text-align: center; background: #edf1f2;
       }
-      .paper-texture { position: absolute; z-index: -1; inset: 0; width: 100%; height: 100%; overflow: hidden; pointer-events: none; }
+      .paper-texture { position: absolute; z-index: -1; left: 0; width: 100%; height: auto; overflow: hidden; pointer-events: none; }
+      .paper-texture-top { top: 0; mask-image: linear-gradient(#000 55%, transparent); }
+      .paper-texture-bottom { bottom: 0; mask-image: linear-gradient(transparent, #000 45%); }
       header { display: grid; justify-items: center; gap: 9px; padding: 0 0 24px; }
       .logo-link { display: block; width: 76px; border-radius: 50%; }
       .logo-link img { display: block; width: 100%; height: auto; }
@@ -89,7 +91,10 @@
         <image href="assets/agra-paper-winter.jpg" width="941" height="1672"/>
       </svg>
       <div class="paper">
-        <svg class="paper-texture" viewBox="0 430 941 610" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <svg class="paper-texture paper-texture-top" viewBox="0 430 941 400" aria-hidden="true" focusable="false">
+          <image href="assets/agra-paper-winter.jpg" width="941" height="1672"/>
+        </svg>
+        <svg class="paper-texture paper-texture-bottom" viewBox="0 650 941 390" aria-hidden="true" focusable="false">
           <image href="assets/agra-paper-winter.jpg" width="941" height="1672"/>
         </svg>
       <header>
