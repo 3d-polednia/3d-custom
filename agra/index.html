@@ -10,16 +10,16 @@
     <title>Świąteczne życzenia | Agra</title>
     <style>
       :root {
-        --midnight: #073846;
-        --deep: #042832;
-        --pine: #0b544f;
-        --spruce: #0f6d5c;
-        --mist: #eef6ef;
-        --cream: #fffaf0;
-        --gold: #e9bd68;
-        --gold-light: #ffe1a2;
-        --red: #b94a43;
-        --ink: #173e42;
+        --midnight: #eff8fb;
+        --deep: #e4f2f7;
+        --pine: #245f49;
+        --spruce: #397b5c;
+        --mist: #f6fbfc;
+        --cream: #174c3e;
+        --gold: #d69a3e;
+        --gold-light: #f8d78b;
+        --red: #be4038;
+        --ink: #1a4c40;
       }
 
       * { box-sizing: border-box; }
@@ -30,29 +30,13 @@
         min-height: 100vh;
         margin: 0;
         overflow-x: hidden;
-        color: var(--cream);
+        color: var(--ink);
         font-family: Georgia, "Times New Roman", serif;
-        background:
-          radial-gradient(circle at 12% 8%, rgba(99, 164, 139, .24), transparent 25rem),
-          radial-gradient(circle at 84% 12%, rgba(233, 189, 104, .16), transparent 21rem),
-          linear-gradient(160deg, var(--midnight) 0%, var(--deep) 76%);
+        background: #e8f3f7 url("assets/agra-paper-winter.jpg") center top / cover fixed no-repeat;
       }
 
       body::before {
-        position: fixed;
-        z-index: 0;
-        inset: 0;
-        pointer-events: none;
-        content: "";
-        opacity: .5;
-        background-image:
-          radial-gradient(circle at 12% 20%, #fff 0 1px, transparent 1.7px),
-          radial-gradient(circle at 75% 13%, #fff 0 1px, transparent 1.7px),
-          radial-gradient(circle at 47% 8%, #fff 0 1.2px, transparent 1.8px),
-          radial-gradient(circle at 93% 47%, #fff 0 .8px, transparent 1.5px),
-          radial-gradient(circle at 25% 63%, #fff 0 1px, transparent 1.7px),
-          radial-gradient(circle at 62% 83%, #fff 0 .8px, transparent 1.5px);
-        background-size: 180px 180px, 230px 230px, 270px 270px, 320px 320px, 210px 210px, 260px 260px;
+        display: none;
       }
 
       a { color: inherit; }
@@ -89,7 +73,7 @@
 
       .topline {
         margin: 0;
-        color: rgba(255,250,240,.85);
+        color: var(--pine);
         font-family: Arial, sans-serif;
         font-size: .72rem;
         font-weight: 700;
@@ -114,10 +98,8 @@
         text-align: center;
         border: 1px solid rgba(255, 240, 205, .38);
         border-radius: 5px;
-        background:
-          linear-gradient(145deg, rgba(255,255,255,.13), transparent 31%),
-          rgba(7, 56, 70, .64);
-        box-shadow: 0 28px 65px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,255,255,.18);
+        background: rgba(255, 255, 255, .82);
+        box-shadow: 0 20px 45px rgba(44, 91, 87, .18), inset 0 1px 0 rgba(255,255,255,.72);
         backdrop-filter: blur(7px);
       }
 
@@ -140,7 +122,7 @@
       .eyebrow {
         position: relative;
         margin: 0 0 18px;
-        color: var(--gold-light);
+        color: #a83c34;
         font-family: Arial, sans-serif;
         font-size: .74rem;
         font-weight: 700;
@@ -152,7 +134,7 @@
         position: relative;
         max-width: 660px;
         margin: 0 auto;
-        color: var(--cream);
+        color: var(--pine);
         font-size: clamp(2.45rem, 6vw, 4.75rem);
         font-weight: 400;
         letter-spacing: -.045em;
@@ -172,18 +154,18 @@
         position: relative;
         max-width: 600px;
         margin: 0 auto;
-        color: rgba(255,250,240,.9);
+        color: #2e5f52;
         font-size: clamp(1.05rem, 2vw, 1.28rem);
         line-height: 1.56;
       }
 
       .wishes p { margin: 0; }
-      .wishes strong { color: var(--gold-light); font-weight: 400; }
+      .wishes strong { color: #a83c34; font-weight: 700; }
 
       .signature {
         position: relative;
         margin: 26px 0 0;
-        color: var(--gold-light);
+        color: var(--pine);
         font-size: 1.05rem;
         font-style: italic;
       }
@@ -211,39 +193,17 @@
 
       .voice-control:hover { transform: translateY(-2px); box-shadow: 0 10px 0 #be8a3b, 0 15px 28px rgba(0,0,0,.24); }
       .voice-control:active { transform: translateY(4px); box-shadow: 0 4px 0 #be8a3b, 0 7px 16px rgba(0,0,0,.2); }
-      .voice-control[aria-pressed="true"] { color: var(--cream); background: var(--red); box-shadow: 0 8px 0 #82342f, 0 12px 25px rgba(0,0,0,.2); }
+      .voice-control[aria-pressed="true"] { color: #fff; background: var(--red); box-shadow: 0 8px 0 #82342f, 0 12px 25px rgba(0,0,0,.2); }
       .voice-icon { width: 19px; height: 19px; fill: currentColor; }
 
       .voice-status {
         position: relative;
         min-height: 1.3em;
         margin: 17px 0 0;
-        color: rgba(255,250,240,.72);
+        color: #416b60;
         font-family: Arial, sans-serif;
         font-size: .75rem;
       }
-
-      .landscape {
-        position: absolute;
-        z-index: -1;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        height: 125px;
-        overflow: hidden;
-        pointer-events: none;
-      }
-
-      .hill { position: absolute; bottom: -72px; border-radius: 50% 50% 0 0; background: #052f39; }
-      .hill.one { right: -6%; width: 68%; height: 150px; opacity: .94; }
-      .hill.two { left: -9%; width: 65%; height: 126px; background: #0a4649; }
-
-      .tree { position: absolute; bottom: 19px; width: 0; height: 0; border-right: 26px solid transparent; border-bottom: 0; border-left: 26px solid transparent; border-top: 74px solid #0a514d; filter: drop-shadow(0 4px 0 rgba(0,0,0,.15)); }
-      .tree::after { position: absolute; bottom: 66px; left: -3px; width: 6px; height: 15px; content: ""; background: #9b693c; }
-      .tree.a { left: 8%; transform: scale(.72); }
-      .tree.b { left: 20%; transform: scale(1.05); }
-      .tree.c { right: 17%; transform: scale(.58); }
-      .tree.d { right: 5%; transform: scale(.88); }
 
       footer {
         position: relative;
@@ -252,14 +212,14 @@
         width: min(1120px, calc(100% - 40px));
         margin: 0 auto;
         padding: 20px 0 26px;
-        color: rgba(255,250,240,.66);
+        color: var(--pine);
         font-family: Arial, sans-serif;
         font-size: .72rem;
         text-align: center;
       }
 
       .maker-link {
-        color: var(--gold-light);
+        color: #9b342e;
         font-weight: 700;
         text-decoration-color: rgba(255,225,162,.5);
         text-underline-offset: 3px;
@@ -273,7 +233,6 @@
         .greeting-card { padding-right: 25px; padding-left: 25px; }
         .greeting-card::before { transform: scale(.76) rotate(-20deg); transform-origin: top left; }
         .greeting-card::after { transform: scale(.76) rotate(148deg); transform-origin: bottom right; }
-        .landscape { height: 90px; }
         footer { width: min(100% - 28px, 1120px); padding-bottom: 18px; }
       }
 
@@ -307,10 +266,6 @@
           </button>
           <p class="voice-status" id="voice-status" aria-live="polite">Dotknij przycisku, aby odtworzyć życzenia.</p>
 
-          <div class="landscape" aria-hidden="true">
-            <div class="hill one"></div><div class="hill two"></div>
-            <div class="tree a"></div><div class="tree b"></div><div class="tree c"></div><div class="tree d"></div>
-          </div>
         </section>
       </main>
 
